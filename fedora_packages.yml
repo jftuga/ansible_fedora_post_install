@@ -1,0 +1,9 @@
+---
+- hosts: hosts
+  tasks:
+  - name: Installing packages
+    become: true
+    dnf:
+      name: ['aria2', 'bat', 'bind-utils', 'fd-find', 'htop', 'iotop', 'jq', 'ripgrep', 'vim', 'sqlite', 'wget', 'yamllint', '@development-tools']
+      state: present
+      update_cache: true
